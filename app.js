@@ -1,11 +1,12 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var config = require('./config');
+//var config = require('./config'); needed for local server
 var mongo = require('mongodb').MongoClient;
 var url = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds161048.mlab.com:61048/url-shortener`;
 var urlManager = require('./urlManager')
 var port = process.env.PORT || 3000;
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
